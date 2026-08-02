@@ -1,6 +1,7 @@
 stages:
   - test
 
+
 docker-build-test:
   stage: test
   image: docker:24.0
