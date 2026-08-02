@@ -8,7 +8,9 @@ docker-build-test:
   services:
     - docker:24.0-dind
   tags:
-    - avadocmgmtdevqa
+    - aws
+    - prd
+    - us-west-2
   variables:
     DOCKER_TLS_CERTDIR: "/certs"
   script:
