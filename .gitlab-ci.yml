@@ -7,6 +7,8 @@ docker-build-test:
   image: docker:24.0
   services:
     - docker:24.0-dind
+  tags:
+    - avadocmgmtdevqa
   variables:
     DOCKER_TLS_CERTDIR: "/certs"
   script:
