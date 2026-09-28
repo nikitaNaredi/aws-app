@@ -1,0 +1,23 @@
+name: Docker Build Test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  docker-build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Docker info
+        run: docker info
+
+      - name: Build Docker image
+        run: docker build -t aws-app:test .
+
+      - name: Run Docker image
+        run: docker run --rm aws-app:test
